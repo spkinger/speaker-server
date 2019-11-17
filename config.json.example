@@ -3,5 +3,8 @@
   "TSLKeyFile": "cert.key",
   "WssAllowOrigin": [],
   "HttpAddr": "0.0.0.0:8443",
-  "TokenTimeOut": 600
+  "TokenTimeOut": 600,
+  "DBUser": "",
+  "DBPassword": "",
+  "DBName": "speaker"
 }

@@ -83,11 +83,11 @@ func main() {
 	})
 
 	// 启动https服务
-	//router.ServeTLS(
-	//	config.Config.HttpAddr,
-	//	config.Config.TSLCertFile,
-	//	config.Config.TSLKeyFile)
-	router.ServeHttp("0.0.0.0:80")
+	router.ServeTLS(
+		config.Config.HttpAddr,
+		config.Config.TSLCertFile,
+		config.Config.TSLKeyFile)
+	//router.ServeHttp("0.0.0.0:80")
 }
 
 func tst()  {

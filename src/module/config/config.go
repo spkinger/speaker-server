@@ -12,6 +12,9 @@ type conf struct {
 	WssAllowOrigin []string // websocket允许的来源域名
 	HttpAddr string // http接口的Addr:[domain:port]
 	TokenTimeOut int64 // token的过期时间（秒）
+	DBUser string // 数据库用户
+	DBPassword string // 数据库密码
+	DBName string // 数据库名称
 }
 
 // 公共配置变量
