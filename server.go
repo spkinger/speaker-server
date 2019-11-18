@@ -91,20 +91,7 @@ func main() {
 }
 
 func tst()  {
-	//user := model.User{}
-	//user.GetByName("aaa")
-	//log.Print(user)
-	//ur := model.UserRel{
-	//	FromUser: int64(1),
-	//	TargetUser: int64(2),
-	//}
-	//res := ur.Create()
-	//log.Printf("create: %v", res)
-	//ur.Delete(1, 2)
-	//fr := model.FriendRequest{}
-	//err := fr.Add(1, 2)
-	//log.Print("fr:", fr)
-	//log.Print("err:", err)
+
 }
 
 // 初始化项目
