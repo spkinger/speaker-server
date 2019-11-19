@@ -29,7 +29,7 @@ func UserStatusCheck(next http.Handler) http.Handler {
 			return
 		}
 
-		if u.Path == "/register" || u.Path == "/login" {
+		if u.Path == "/register" || u.Path == "/login" || u.Path == "/wss" {
 			// 不验证，转向下个Handler
 			next.ServeHTTP(writer, request)
 			return
