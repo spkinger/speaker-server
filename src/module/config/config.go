@@ -10,6 +10,7 @@ type conf struct {
 	TSLCertFile string // tsl cert file
 	TSLKeyFile string // tsl key file
 	WssAllowOrigin []string // websocket允许的来源域名
+	HttpAllowOrigin string // http请求允许的来源域名
 	HttpAddr string // http接口的Addr:[domain:port]
 	TokenTimeOut int64 // token的过期时间（秒）
 	DBUser string // 数据库用户

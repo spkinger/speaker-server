@@ -3,6 +3,7 @@ package middleware
 import (
 	"encoding/json"
 	"github.com/spkinger/speaker-server/src/module/auth"
+	"github.com/spkinger/speaker-server/src/module/config"
 	"github.com/spkinger/speaker-server/src/module/pub"
 	"net/http"
 	"net/url"
@@ -11,11 +12,11 @@ import (
 // 用户登录态验证
 func UserStatusCheck(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
-		//writer.Header().Set("Access-Control-Allow-Origin", "*") // 于本地测试时开启，以兼容localhost和服务端域名
-		//writer.Header().Add("Access-Control-Allow-Headers", "Content-Type") //header的类型
-		//writer.Header().Set("content-type", "application/json")             //返回数据格式是json
-		//writer.Header().Set("Access-Control-Allow-Headers", "Authorization") //允许请求header Authorization
-		//writer.Header().Set("Access-Control-Expose-Headers", "Authorization") //允许响应header Authorization
+		writer.Header().Set("Access-Control-Allow-Origin", config.Config.HttpAllowOrigin) // 于本地测试时开启，以兼容localhost和服务端域名
+		writer.Header().Add("Access-Control-Allow-Headers", "Content-Type") //header的类型
+		writer.Header().Set("content-type", "application/json")             //返回数据格式是json
+		writer.Header().Set("Access-Control-Allow-Headers", "Authorization") //允许请求header Authorization
+		writer.Header().Set("Access-Control-Expose-Headers", "Authorization") //允许响应header Authorization
 
 		// cors类型的不进入后面流程
 		if request.Method == "OPTIONS" {
