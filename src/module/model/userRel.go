@@ -52,6 +52,12 @@ func (ur *UserRel) DelFriends(from int64, target int64) error {
 	return nil
 }
 
+// 检测是否是好友
+func (ur *UserRel) CheckFriends(from int64, target int64) bool {
+	Db.Where("from_user = ? and target_user = ?", from, target).First(ur)
+	return ur.ID != 0
+}
+
 // 我的好友列表
 func (ur *UserRel) MyFriends(from int64, page int, pageSize int) ([]UserResult, error) {
 	userResultList := []UserResult{}

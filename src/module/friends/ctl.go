@@ -38,6 +38,13 @@ func AddRequest(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	// 判断对方是否已经是好友
+	userRel := model.UserRel{}
+	if userRel.CheckFriends(uid, targetId64) {
+		pub.ErrRep(writer,"对方已经是好友.", map[string]interface{}{})
+		return
+	}
+
 	// 添加好友申请
 	friendRequest := model.FriendRequest{}
 	if err := friendRequest.Add(uid, targetId64); err != nil {
