@@ -152,6 +152,7 @@ func wsHandler(writer http.ResponseWriter, request *http.Request) {
 	if _,ok := userChanList[chanName]; ok {
 		userChanList[chanName] <- "close"
 		close(userChanList[chanName])
+		delete(userChanList, chanName)
 	}
 }
 
